@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import FeedCard from "../components/FeedCard";
-import { Divider } from "antd";
+import { Avatar, Input } from "antd";
+import profile from "../assets/img0.jpg";
+import UserCard from "../components/UserCard";
+import { FiSearch } from "react-icons/fi";
 const Home = () => {
   const today = Date();
   const date = today.split(" ");
@@ -13,30 +15,31 @@ const Home = () => {
 
   return (
     <>
-      <HomeHeader>
-        <h1 className="text-light">Good Morning</h1>
-        <h3>Dora Designer</h3>
-        <p className="home-information-label">2 Deadlines . 14 Alerts Today</p>
-      </HomeHeader>
       <section className="tab">
         <FeedContainer>
-          <div className="date-day-container">
-            <span className="date-description">{`${date[0]} ${date[1]} ${date[2]}, ${date[3]}`}</span>
-            <span className="day-description">Today</span>
+          <div className="app-bar">
+            <div className="heading-container">
+              <span className="home-heading">Message</span>
+            </div>
+            <div className="avatar-container">
+              <Avatar size={50} src={profile} />
+            </div>
           </div>
-          <Divider />
-          <FeedCard />
-          <FeedCard />
-          <FeedCard />
-          <FeedCard />
-          <FeedCard />
-          <Divider />
-          <div className="date-day-container">
-            <span className="date-description">{`${next_date[0]} ${next_date[1]} ${next_date[2]}, ${next_date[3]}`}</span>
-            <span className="day-description">Tomorrow</span>
+          <div className="search-container">
+            <Input.Search placeholder="Search ..." bordered={false} />
           </div>
-          <FeedCard />
-          <FeedCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
+          <UserCard />
         </FeedContainer>
       </section>
     </>
@@ -45,69 +48,72 @@ const Home = () => {
 
 export default Home;
 
-const HomeHeader = styled.div`
-  margin-left: 3em;
-  margin-block: 15px;
-
-  h1,
-  h3 {
-    margin: 0;
-    font-size: 2.2em;
-  }
-  h3 {
-    color: #f0f4fd;
-    opacity: 80%;
-    font-size: 1.7em;
-  }
-
-  .home-information-label {
-    font-size: 1.1em;
-    font-weight: 600;
-    margin: 10px 0;
-  }
-  @media screen and (max-width: 400px) {
-    h1 {
-      font-size: 1.5em;
-    }
-    h3 {
-      font-size: 1em;
-    }
-    .home-information-label {
-      font-size: 0.9em;
-    }
-  }
-`;
-
 const FeedContainer = styled.div`
-  width: 90%;
+  width: 92%;
   margin-inline: auto;
   margin-top: 40px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
 
-  .date-day-container {
+  .app-bar {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
-    flex-direction: column;
+    align-items: center;
   }
-  .date-description {
-    color: #152551;
-    font-size: 1.1em;
-  }
-  .day-description {
-    color: #152551;
-    font-size: 2.5em;
-    font-weight: bold;
+  .heading-container {
+    flex-grow: 1;
   }
 
-  .ant-divider-horizontal {
+  .home-heading {
+    font-size: 2.5em;
+    color: var(--text-dark);
+  }
+
+  .search-container {
+    width: 100%;
     margin-block: 20px;
-    background-color: #152551;
-    opacity: 30%;
-    border-width: 2px;
-    width: 90%;
-    min-width: 90%;
-    margin-inline: auto;
+    text-align: center;
+  }
+
+  .search-container input {
+    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    border: none;
+    background-color: #fff;
+    padding-inline: 2em;
+    font-size: 1.2em;
+  }
+
+  .ant-input-group-addon {
+    background: #fff;
+    padding-inline: 20px;
+    width: 70px;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .ant-input-search
+    > .ant-input-group
+    > .ant-input-group-addon:last-child
+    .ant-input-search-button:not(.ant-btn-primary) {
+    border: none;
+    background-color: #f0f4fd;
+    border-radius: 13px;
+    width: 40px;
+    height: 40px;
+  }
+  .anticon svg {
+    font-size: 1.5em;
+  }
+  .search-container > input::placeholder {
+    color: #cfd3dc;
+    opacity: 60%;
+    font-size: 1.2em;
+  }
+
+  .ant-input: placeholder-shown {
+    padding-inline: 2em;
   }
 `;

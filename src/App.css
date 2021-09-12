@@ -1,11 +1,15 @@
 @import "~antd/dist/antd.css";
 @font-face {
-  font-family: Poppins;
-  src: url(./styles/fonts/Poppins-Light.ttf);
+  font-family: Touche;
+  src: url(./styles/fonts/Touche\ W03\ Bold.ttf);
 }
-
+:root {
+  --text-dark: #11214e;
+  --text-light: #fff;
+  --text-dim: #8884dc;
+}
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Touche", sans-serif;
 }
 
 .text-light {
@@ -22,9 +26,9 @@
 
 .tab {
   width: 100%;
-  height: 75%;
+  height: 100%;
   background: #f0f4fd;
-  border-radius: 40px;
+  border-radius: 0 0 50px 50px;
   animation: slide 0.3s ease-in 1 forwards;
   overflow: auto;
 }

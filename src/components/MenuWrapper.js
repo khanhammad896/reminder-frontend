@@ -61,6 +61,9 @@ const MenuWrapper = () => {
             <span className="menu-label">Reminders</span>
           </Link>
         </div>
+        <div className="menu-item center-circle">
+          {tabIndex === 2 ? <BiUserPlus /> : <BiBellPlus />}
+        </div>
         <div className="menu-item">
           <Link
             className={
@@ -89,9 +92,9 @@ const MenuWrapper = () => {
             <span className="menu-label">Calendar</span>
           </Link>
         </div>
-        <div className="outer-circle">
+        {/* <div className="outer-circle">
           {tabIndex === 2 ? <BiUserPlus /> : <BiBellPlus />}
-        </div>
+        </div> */}
       </MenuContainer>
     </>
   );
@@ -100,11 +103,12 @@ const MenuWrapper = () => {
 export default MenuWrapper;
 
 const MenuContainer = styled.section`
-  width: 80%;
+  width: 60%;
   margin-inline: auto;
-  margin-block: 50px;
+  margin-block: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   .menu-item {
     height: 50px;
@@ -129,33 +133,21 @@ const MenuContainer = styled.section`
     font-size: 0.8em;
   }
 
-  .outer-circle {
-    width: 50px;
-    height: 50px;
-    background: rgba(256, 256, 256, 1);
+  a:hover {
+    color: #fff;
+  }
+
+  .center-circle {
+    width: 70px;
+    height: 70px;
+    border: 4px solid #fff;
     border-radius: 50%;
-    position: absolute;
-    bottom: 70px;
-    right: -40px;
+    background-color: #e9684b;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
-    color: #5c56cd;
-    cursor: pointer;
-    border: 6px solid #5c56cd;
-    transition: background-color 0.3s linear, color 0.3s linear,
-      border-color 0.3s linear;
-  }
-
-  .outer-circle:hover {
-    background-color: #5c56cd;
     color: #fff;
-    border-color: #fff;
-  }
-
-  a:hover {
-    color: #fff;
+    font-size: 2.8em;
   }
 
   @media screen and (max-width: 400px) {
@@ -164,6 +156,12 @@ const MenuContainer = styled.section`
     }
     .menu-label {
       font-size: 0.7em;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    & {
+      width: 90%;
     }
   }
 `;

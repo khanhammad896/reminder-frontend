@@ -36,8 +36,8 @@ const Main = () => {
 export default Main;
 
 const MainContainer = styled.div`
-  width: ${(props) => (props.width > "400" ? "30%" : "100%")};
-  min-width: 400px;
+  width: 50vw;
+  min-width: 526.5px;
   height: ${(props) => props.height}px;
   background: #5c56cd;
   display: flex;
@@ -45,6 +45,6 @@ const MainContainer = styled.div`
   flex-direction: column;
 
   @media screen and (max-width: 400px) {
-    min-width: 100%;
+    width: 100vw;
   }
 `;
