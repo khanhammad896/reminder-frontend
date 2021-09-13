@@ -22,7 +22,7 @@ const Home = () => {
               <span className="home-heading">Message</span>
             </div>
             <div className="avatar-container">
-              <Avatar size={50} src={profile} />
+              <Avatar src={profile} />
             </div>
           </div>
           <div className="search-container">
@@ -61,6 +61,11 @@ const FeedContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+  }
+
+  .ant-avatar {
+    width: 50px;
+    height: 50px;
   }
   .heading-container {
     flex-grow: 1;
@@ -115,5 +120,71 @@ const FeedContainer = styled.div`
 
   .ant-input: placeholder-shown {
     padding-inline: 2em;
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-top: 15px;
+    .home-heading {
+      font-size: 1.7em;
+    }
+
+    .ant-input: placeholder-shown {
+      font-size: 1.1em;
+    }
+
+    .ant-input-search
+      > .ant-input-group
+      > .ant-input-group-addon:last-child
+      .ant-input-search-button:not(.ant-btn-primary) {
+      width: 35px;
+      height: 35px;
+      border-radius: 12px;
+    }
+
+    .anticon svg {
+      font-size: 1.1em;
+    }
+
+    .search-container input {
+      height: 55px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    margin-top: 15px;
+    .home-heading {
+      font-size: 1.2em;
+    }
+
+    .ant-avatar {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #d5d6d8;
+    }
+
+    .ant-input: placeholder-shown {
+      font-size: 1.1em;
+    }
+
+    .ant-input-search
+      > .ant-input-group
+      > .ant-input-group-addon:last-child
+      .ant-input-search-button:not(.ant-btn-primary) {
+      width: 25px;
+      height: 25px;
+      border-radius: 8px;
+    }
+
+    .anticon svg {
+      font-size: 0.9em;
+    }
+
+    .search-container input {
+      height: 45px;
+    }
   }
 `;

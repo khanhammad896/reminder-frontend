@@ -92,9 +92,6 @@ const MenuWrapper = () => {
             <span className="menu-label">Calendar</span>
           </Link>
         </div>
-        {/* <div className="outer-circle">
-          {tabIndex === 2 ? <BiUserPlus /> : <BiBellPlus />}
-        </div> */}
       </MenuContainer>
     </>
   );
@@ -152,16 +149,24 @@ const MenuContainer = styled.section`
 
   @media screen and (max-width: 400px) {
     .menu-items-icons > svg {
-      font-size: 2.2em;
+      font-size: 2em;
     }
     .menu-label {
       font-size: 0.7em;
     }
+
+    .center-circle {
+      width: 50px;
+      height: 50px;
+      font-size: 2em;
+    }
+
+    .menu-label {
+      margin-top: 2px;
+    }
   }
 
   @media screen and (max-width: 1200px) {
-    & {
-      width: 90%;
-    }
+    width: 90%;
   }
 `;

@@ -46,5 +46,6 @@ const MainContainer = styled.div`
 
   @media screen and (max-width: 400px) {
     width: 100vw;
+    min-width: 100vw;
   }
 `;

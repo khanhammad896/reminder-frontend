@@ -7,7 +7,7 @@ const UserCard = () => {
     <>
       <UserCardContainer>
         <div className="avatar-section">
-          <Avatar size={45} src={image} />
+          <Avatar src={image} />
         </div>
         <div className="card-body">
           <div className="user-info-section">
@@ -18,7 +18,8 @@ const UserCard = () => {
           </div>
           <div className="user-online-status">
             <div>
-              <span className="online-circle" /> <span>10:00 am</span>
+              <span className="online-circle" />{" "}
+              <span className="online-time">10:00 am</span>
             </div>
           </div>
         </div>
@@ -47,6 +48,11 @@ const UserCardContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     height: 70%;
+  }
+
+  .ant-avatar {
+    width: 45px;
+    height: 45px;
   }
 
   .user-info-section {
@@ -92,5 +98,61 @@ const UserCardContainer = styled.div`
     border-radius: 50%;
     background-color: #4bc09b;
     margin-inline: 10px;
+  }
+
+  @media screen and (max-width: 400px) {
+    height: 70px;
+    .card-body {
+      margin-left: 10px;
+    }
+
+    .ant-avatar {
+      width: 40px;
+      height: 40px;
+    }
+    .user-name {
+      font-size: 1em;
+    }
+
+    .user-text {
+      font-size: 95%;
+    }
+
+    .online-time {
+      font-size: 85%;
+    }
+
+    .online-circle {
+      margin-inline: 7px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    height: 60px;
+
+    .card-body {
+      margin-left: 5px;
+    }
+
+    .ant-avatar {
+      width: 30px;
+      height: 30px;
+    }
+
+    .user-name {
+      font-size: 0.8em;
+    }
+
+    .user-text {
+      font-size: 70%;
+    }
+
+    .online-time {
+      font-size: 65%;
+    }
+
+    .online-circle {
+      margin-inline: 7px;
+    }
   }
 `;
