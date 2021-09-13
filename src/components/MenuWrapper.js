@@ -166,6 +166,26 @@ const MenuContainer = styled.section`
     }
   }
 
+  @media screen and (max-width: 350px) {
+    .menu-items-icons > svg {
+      font-size: 1.5em;
+    }
+    .menu-label {
+      font-size: 0.5em;
+    }
+
+    .center-circle {
+      width: 35px;
+      height: 35px;
+      font-size: 1.6em;
+      border: 2px solid #fff;
+    }
+
+    .menu-label {
+      margin-top: 2px;
+    }
+  }
+
   @media screen and (max-width: 1200px) {
     width: 90%;
   }

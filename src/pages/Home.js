@@ -66,6 +66,7 @@ const FeedContainer = styled.div`
   .ant-avatar {
     width: 50px;
     height: 50px;
+    border: 1px solid #d3d0d0;
   }
   .heading-container {
     flex-grow: 1;
@@ -167,7 +168,7 @@ const FeedContainer = styled.div`
     }
 
     .ant-input: placeholder-shown {
-      font-size: 1.1em;
+      font-size: 0.9em;
     }
 
     .ant-input-search
